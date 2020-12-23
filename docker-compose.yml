@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  php:
+    build:
+      context: ./php/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./php/src/:/var/www/html/
+
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: enpm631_db
+    volumes:
+      - ./mysql-script/:/docker-entrypoint-initdb.d/
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  dns:
+    build:
+      context: ./dns/
+      dockerfile: Dockerfile
+    ports:
+      - 53:53/udp
+      - 53:53/tcp

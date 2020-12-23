@@ -1,0 +1,2 @@
+service bind9 start
+sleep 10000

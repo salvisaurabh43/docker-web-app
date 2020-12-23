@@ -1,0 +1,8 @@
+zone "fake-umd.edu" {
+    type master;
+    file "/etc/bind/zones/db.fake-umd.edu";
+};
+zone "0.20.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/reverse.fake-umd.edu";
+};
