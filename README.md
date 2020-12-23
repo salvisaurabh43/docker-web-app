@@ -28,7 +28,7 @@ The docker will instantiate 3 containers-
 	systemctl stop systemd-resolved
 
 2. Compose the docker file by runnning following command:
-	docker-compose up -d
+	```docker-compose up -d```
 
 3. Note the IMAGE_ID of the dns container by running the following command:
 	docker ps
