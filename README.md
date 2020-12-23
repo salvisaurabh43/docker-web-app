@@ -11,7 +11,7 @@ The docker will instantiate 3 containers-
 1. Make sure you are in the project root directory "enpm631_project_salvi"
 
 2. Run the following command to start the docker process 
-	docker-compose up -d
+	```docker-compose up -d```
 
 # Web Application
 
@@ -24,22 +24,22 @@ The docker will instantiate 3 containers-
 # DNS Name Server
 
 1. Run the following command to shut down systemd-resolved:
-	systemctl disable systemd-resolved
-	systemctl stop systemd-resolved
+	```systemctl disable systemd-resolved```
+	```systemctl stop systemd-resolved```
 
 2. Compose the docker file by runnning following command:
 	```docker-compose up -d```
 
 3. Note the IMAGE_ID of the dns container by running the following command:
-	docker ps
+	```docker ps```
 
 4. Check the IP Address for the dns container by running the following command:
-	docker inspect <IMAGE_ID>
+	```docker inspect <IMAGE_ID>```
 
 5. I have setup two domains for name resolution
-	enpm.fake-umd.edu <----> 172.20.0.3 
-	ents.fake-umd.edu <----> 172.20.0.4
+	```enpm.fake-umd.edu <----> 172.20.0.3```
+	```ents.fake-umd.edu <----> 172.20.0.4```
 
 6. Run the following command to resolve the domains:
-	nslookup enpm.fake-umd.edu <ip-addr-of-dns-container>
-	nslookup ents.fake-umd.edu <ip-addr-of-dns-container>
+	```nslookup enpm.fake-umd.edu <ip-addr-of-dns-container>```
+	```nslookup ents.fake-umd.edu <ip-addr-of-dns-container>```
